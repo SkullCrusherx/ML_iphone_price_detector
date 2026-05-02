@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My ML Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='working.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="container fade-in">
+        <h1>🚀 My ML Projects</h1>
+        <p class="subtitle">Interactive demos and ongoing work</p>
+
+        <div class="card-container">
+
+            <!-- Rainfall Prediction -->
+            <div class="card rain">
+                <h2>🌧 Rainfall Probability</h2>
+                <p>Predict chance of rain using weather data</p>
+                <span class="status">In Progress</span>
+            </div>
+
+            <!-- Traffic Detection -->
+            <div class="card traffic">
+                <h2>🚦 Traffic Detection</h2>
+                <p>Detect vehicles using computer vision</p>
+                <span class="status">Planned</span>
+            </div>
+
+        </div>
+
+        <a href="/" class="back-btn">⬅ Back</a>
+    </div>
+
+</div>
+
+<script>
+/* Smooth page transition */
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            window.location = this.href;
+        }, 300);
+    });
+});
+</script>
+
+</body>
+</html>

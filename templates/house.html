@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='house.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <div class="form-box fade-in">
+        <h1>🏠 House Price Prediction</h1>
+
+        <form action="/predict_house" method="POST">
+
+            <input type="number" name="area" placeholder="Area (sq ft)" required>
+            <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+            <input type="number" name="bathrooms" placeholder="Bathrooms" required>
+            <input type="number" name="floors" placeholder="Floors" required>
+
+            <button type="submit">Predict Price</button>
+
+        </form>
+
+        <a href="/" class="back-btn">⬅ Back</a>
+    </div>
+
+</div>
+
+<script>
+/* Smooth page exit transition */
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            window.location = this.href;
+        }, 300);
+    });
+});
+</script>
+
+</body>
+</html>

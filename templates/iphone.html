@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iPhone Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='iphone.css') }}">
+</head>
+
+<body>
+
+<div class="background-phone"></div>
+
+<div class="overlay">
+
+    <div class="form-box fade-in">
+        <h1>📱 iPhone Price Prediction</h1>
+
+        <form action="/iphone" method="POST">
+
+            <!-- SERIES DROPDOWN -->
+            <select name="Series" required>
+                <option value="" disabled selected>Select iPhone Series</option>
+                <option value="6">iPhone 6</option>
+                <option value="7">iPhone 7</option>
+                <option value="8">iPhone 8</option>
+                <option value="10">iPhone X</option>
+                <option value="11">iPhone 11</option>
+                <option value="12">iPhone 12</option>
+                <option value="13">iPhone 13</option>
+                <option value="14">iPhone 14</option>
+                <option value="15">iPhone 15</option>
+                <option value="16">iPhone 16</option>
+            </select>
+
+            <input type="number" name="RAM_GB" placeholder="RAM (GB)" required>
+            <input type="number" step="0.1" name="Screen_Size" placeholder="Screen Size (inch)" required>
+            <input type="number" name="Battery_mAh" placeholder="Battery (mAh)" required>
+            <input type="number" name="Storage_GB" placeholder="Storage (GB)" required>
+            <input type="number" name="Release_Year" placeholder="Release Year" required>
+
+            <button type="submit">Predict Price</button>
+
+        </form>
+
+        <a href="/" class="back-btn">⬅ Back</a>
+    </div>
+
+</div>
+
+<script>
+/* Smooth page transition */
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            window.location = this.href;
+        }, 300);
+    });
+});
+</script>
+
+</body>
+</html>

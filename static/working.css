@@ -1,0 +1,123 @@
+/* Background gradient */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    transition: opacity 0.3s ease;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Overlay */
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    color: white;
+}
+
+/* Fade-in */
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtitle */
+.subtitle {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+/* Cards layout */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card base */
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    transition: 0.4s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+/* Hover glow */
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Lift + glow */
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Specific card colors */
+.rain {
+    background: rgba(52, 152, 219, 0.2);
+    border-left: 5px solid #3498db;
+}
+
+.traffic {
+    background: rgba(231, 76, 60, 0.2);
+    border-left: 5px solid #e74c3c;
+}
+
+/* Status */
+.status {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    transform: translateX(-4px);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iPhone Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+
+<body>
+
+<h1>📱 iPhone Price Prediction</h1>
+<h3>This is Demo Data Based, Not Real</h3>
+
+<div class="iphone">
+    <svg viewBox="0 0 24 48" fill="none">
+        <rect x="1" y="1" width="22" height="46" rx="5" stroke="white" stroke-width="1.5"/>
+        <circle cx="12" cy="44" r="1" fill="white"/>
+    </svg>
+</div>
+
+{% if result %}
+
+<div class="container">
+
+    <!-- LEFT: Result -->
+    <div class="result">
+        <h2>Estimated Price</h2>
+        <h1>₹{{ result }}</h1>
+    </div>
+
+    <!-- RIGHT: Specs -->
+    <div class="specs">
+        <h2>Selected Specs</h2>
+        <ul>
+            <li>📱 iPhone {{ series }}</li>
+            <li>⚡ RAM: {{ ram }} GB</li>
+            <li>📺 Screen: {{ screen }} inch</li>
+            <li>🔋 Battery: {{ battery }} mAh</li>
+            <li>💾 Storage: {{ storage }} GB</li>
+            <li>📅 Year: {{ year }}</li>
+        </ul>
+    </div>
+
+</div>
+
+{% endif %}
+
+</body>
+</html>
